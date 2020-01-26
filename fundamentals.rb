@@ -10,6 +10,8 @@ p == p.split("").reverse.join("")
 p == p.reverse
 # true
 
+# ----------------------------------------------------------------------------------------
+
 # Same functionality written within a function
 def palindrome?(string)
   string == string.reverse
@@ -23,3 +25,20 @@ palindrome?(p)
 palindrome?(s)
 # false
 
+# ----------------------------------------------------------------------------------------
+
+p.palindrome?
+# Returns argument error
+
+class String # Editing default data type 'String'
+  def palindrome? # No argument because Strings know about themselves
+    self == self.reverse
+  end
+end
+
+# Now we can test the following 
+p.palindrome?
+# true
+
+s.palindome?
+# false    
