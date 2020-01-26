@@ -41,4 +41,24 @@ p.palindrome?
 # true
 
 s.palindome?
-# false    
+# false
+
+# ----------------------------------------------------------------------------------------
+
+states = ["Kansas", "Nebraska", "North Dakota", "South Dakota"]
+
+# Imperative version
+def imperative_urls(states)
+  urls = []
+  states.each do |state|
+    urls << state.downcase.split.join("-")
+  end
+  urls
+end
+p imperative_urls(states)    
+# returns ["kansas", "nebraska", "north-dakota", "south-dakota"]
+
+ 
+# Functional version
+states.map { |state| state.downcase.split.join('-') }
+# returns ["kansas", "nebraska", "north-dakota", "south-dakota"]
