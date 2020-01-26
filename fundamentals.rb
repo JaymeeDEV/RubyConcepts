@@ -57,8 +57,29 @@ def imperative_urls(states)
 end
 p imperative_urls(states)    
 # returns ["kansas", "nebraska", "north-dakota", "south-dakota"]
-
  
 # Functional version
 states.map { |state| state.downcase.split.join('-') }
 # returns ["kansas", "nebraska", "north-dakota", "south-dakota"]
+
+# ----------------------------------------------------------------------------------------
+
+# Objects and classes
+
+class Phrase # Defines a Phrase class
+  attr_accessor :content # Allow us to access (“get”) and assign (“set”) to 'content' attribute
+      			 # Without this we wouldn't be able to access the content instance variable (NoMethodError)
+
+  def initialize(content)
+   @content = content # Initializes the instance variable 'content'
+  end
+end
+
+# Accessing the Phrase class to create output content
+phrase = Phrase.new("Madam, I'm Adam.")
+puts phrase.content
+# => Madam, I'm Adam.
+
+phrase.content = "Able was I, ere I saw Elba."
+puts phrase.content
+# => Able was I, ere I saw Elba.
