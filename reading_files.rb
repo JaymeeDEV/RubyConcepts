@@ -13,4 +13,11 @@ lines.each do |line|
   end
 end
 
+# Writing to files - Joining the array and writing the resulting string to palindromes_file.txt
+
+# Use select method to create an array of all the palindromes
+# Because the palindrome? method is called on each line, we can use the 'symbol-to-proc' notation
+palindromes = lines.select(&:palindrome?)
+File.write('palindromes_file.txt', palindromes.join)
+
 # 'ruby reading_files.rb' to run the file
